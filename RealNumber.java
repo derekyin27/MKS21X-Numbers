@@ -4,5 +4,6 @@ public class RealNumber{
   public double getValue(){
     return value;
   }
+}
   
   
