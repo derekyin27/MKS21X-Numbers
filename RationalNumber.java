@@ -18,4 +18,8 @@ public class RationalNumber{
     return getN() / getD();
   }
   
+  public String toString() {
+    return "a"
+  }
+  
 }
