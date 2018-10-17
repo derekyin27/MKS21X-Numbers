@@ -92,14 +92,15 @@ public class RationalNumber extends RealNumber
   *Return a new RationalNumber that is the this divided by the other
   */
   public RationalNumber divide(RationalNumber other){
-    return this.getValue() / other.getValue();
+    RationalNumber res = new RationalNumber(this.getNumerator() * other.getDenominator(), other.getNumerator() * this.getDenominator())
+    return res;
   }
 
   /**
   *Return a new RationalNumber that is the sum of this and the other
   */
   public RationalNumber add(RationalNumber other){
-    return this.getValue() + other.getValue();
+    RationalNumber res = new RationalNumber(
   }
   /**
   *Return a new RationalNumber that this minus the other
