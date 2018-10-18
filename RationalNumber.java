@@ -60,8 +60,13 @@ public class RationalNumber extends RealNumber
   *@return the value of the GCD
   */
   private static int gcd(int a, int b){
-    /*use euclids method or a better one*/
-    if (a == 0 || b == 0
+    int gcdz = 0;
+    for(int i = 1; i <= a && i <= b; ++i)
+        {
+            if(a % i==0 && b % i==0)
+                gcdz = i;
+        }
+        return gcdz;
   }
 
 
@@ -72,7 +77,8 @@ public class RationalNumber extends RealNumber
   *reduced after construction.
   */
   private void reduce(){
-
+numerator = numerator / gcd(numerator, denominator);
+denominator = denominator / gcd(numerator, denominator);
   }
 
 
@@ -100,12 +106,14 @@ public class RationalNumber extends RealNumber
   *Return a new RationalNumber that is the sum of this and the other
   */
   public RationalNumber add(RationalNumber other){
-    RationalNumber res = new RationalNumber(
+    RationalNumber res = new RationalNumber(this.reduce() + other.reduce(), this.gcd());
+    return res;
   }
   /**
   *Return a new RationalNumber that this minus the other
   */
   public RationalNumber subtract(RationalNumber other){
-    return this.getValue() - other.getValue();
+    RationalNumber res = new RationalNumber(this.reduce() - other.reduce(), this.gcd());
+    return res;
   }
 } 
