@@ -90,7 +90,7 @@ denominator = denominator / gcd(numerator, denominator);
   *Return a new RationalNumber that is the product of this and the other
   */
   public RationalNumber multiply(RationalNumber other){
-  RationalNumber res = new RationalNumber(this.getNumerator() * other.getNumerator(), other.getDenominator() * this.getDenominator())
+  RationalNumber res = new RationalNumber(this.getNumerator() * other.getNumerator(), other.getDenominator() * this.getDenominator());
     return res;
   }
 
@@ -98,7 +98,7 @@ denominator = denominator / gcd(numerator, denominator);
   *Return a new RationalNumber that is the this divided by the other
   */
   public RationalNumber divide(RationalNumber other){
-    RationalNumber res = new RationalNumber(this.getNumerator() * other.getDenominator(), other.getNumerator() * this.getDenominator())
+    RationalNumber res = new RationalNumber(this.getNumerator() * other.getDenominator(), other.getNumerator() * this.getDenominator());
     return res;
   }
 
